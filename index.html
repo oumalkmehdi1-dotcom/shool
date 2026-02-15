@@ -73,17 +73,21 @@
             margin-top: 10px;
         }
 
+        .models ul {
+            padding-left: 20px;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 18px;
+        }
+
         footer {
             text-align: center;
             background-color: #cc5200;
             color: white;
             padding: 15px 0;
             margin-top: 40px;
-        }
-
-        .loading {
-            text-align: center;
-            font-size: 18px;
         }
     </style>
 </head>
@@ -92,23 +96,24 @@
 
 <header>
     <h1>Location de Voitures au Maroc</h1>
-    <p>Trouvez la voiture idéale depuis notre API Cloud 🚗</p>
+    <p>Liste dynamique depuis API Azure 🚀</p>
 </header>
 
 <nav>
     <a href="#">Accueil</a>
-    <a href="#brands">Voitures</a>
+    <a href="#brands">Marques</a>
     <a href="#">Contact</a>
 </nav>
 
 <div class="container">
     <section id="brands">
-        <h2>Voitures Disponibles</h2>
+        <h2>Nos Marques Disponibles</h2>
 
-        <!-- contenu dynamique -->
-        <div id="carsContainer" class="brands">
-            <p class="loading">Chargement des voitures...</p>
+        <!-- zone dynamique -->
+        <div id="brandsContainer" class="brands">
+            <p class="loading">Chargement...</p>
         </div>
+
     </section>
 </div>
 
@@ -117,51 +122,31 @@
 </footer>
 
 <script>
-const API_URL = "https://school-back-a4axavahdwfhezca.westeurope-01.azurewebsites.net/api/cars";
 
-async function loadCars() {
-    const container = document.getElementById("carsContainer");
+const API_URL =
+"https://school-back-a4axavahdwfhezca.westeurope-01.azurewebsites.net/api/cars";
+
+async function loadBrands() {
+
+    const container = document.getElementById("brandsContainer");
 
     try {
         const response = await fetch(API_URL);
-        const cars = await response.json();
+        const data = await response.json();
+
+        // ⚠️ API retourne [[...]]
+        const brands = data[0];
 
         container.innerHTML = "";
 
-        // Si API vide
-        if (!cars || cars.length === 0) {
-            container.innerHTML = "<p>Aucune voiture disponible.</p>";
-            return;
-        }
+        brands.forEach(brand => {
 
-        // Création dynamique des cards
-        cars.forEach(car => {
+            // créer liste modèles
+            const modelsHTML = brand.models
+                .map(model => `<li>${model}</li>`)
+                .join("");
 
             const card = document.createElement("div");
             card.className = "brand";
 
-            card.innerHTML = `
-                <h3>${car.brand ?? "Marque inconnue"}</h3>
-                <div class="models">
-                    <p><strong>Modèle :</strong> ${car.model ?? "-"}</p>
-                    <p><strong>Prix :</strong> ${car.price ?? "-"} MAD / jour</p>
-                    <p><strong>Catégorie :</strong> ${car.category ?? "-"}</p>
-                </div>
-            `;
-
-            container.appendChild(card);
-        });
-
-    } catch (error) {
-        console.error(error);
-        container.innerHTML =
-            "<p>❌ Impossible de charger les données depuis l'API.</p>";
-    }
-}
-
-// appel automatique
-loadCars();
-</script>
-
-</body>
-</html>
+            ca
