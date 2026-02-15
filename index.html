@@ -149,4 +149,29 @@ async function loadBrands() {
             const card = document.createElement("div");
             card.className = "brand";
 
-            ca
+            card.innerHTML = `
+                <h3>${brand.brand}</h3>
+                <div class="models">
+                    <ul>
+                        ${modelsHTML}
+                    </ul>
+                </div>
+            `;
+
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error(error);
+        container.innerHTML =
+            "<p>❌ Erreur lors du chargement de l'API</p>";
+    }
+}
+
+// appel automatique
+loadBrands();
+
+</script>
+
+</body>
+</html>
