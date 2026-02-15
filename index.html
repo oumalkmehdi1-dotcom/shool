@@ -24,7 +24,6 @@
             background-color: #cc5200;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             padding: 10px 0;
         }
 
@@ -33,10 +32,6 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
         }
 
         .container {
@@ -49,45 +44,39 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin-top: 20px;
         }
 
         .brand {
             flex: 1 1 250px;
-            background-color: white;
+            background: white;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
         .brand h3 {
-            margin-top: 0;
             color: #ff6600;
             text-align: center;
+            margin-top: 0;
         }
 
         .models {
-            background-color: #ffe6cc;
+            background: #ffe6cc;
             padding: 10px;
             border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .models ul {
-            padding-left: 20px;
-        }
-
-        .loading {
-            text-align: center;
-            font-size: 18px;
         }
 
         footer {
             text-align: center;
             background-color: #cc5200;
             color: white;
-            padding: 15px 0;
+            padding: 15px;
             margin-top: 40px;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -96,7 +85,7 @@
 
 <header>
     <h1>Location de Voitures au Maroc</h1>
-    <p>Liste dynamique depuis API Azure 🚀</p>
+    <p>Données chargées depuis API Azure 🚀</p>
 </header>
 
 <nav>
@@ -109,9 +98,8 @@
     <section id="brands">
         <h2>Nos Marques Disponibles</h2>
 
-        <!-- zone dynamique -->
         <div id="brandsContainer" class="brands">
-            <p class="loading">Chargement...</p>
+            <p class="loading">Chargement des données...</p>
         </div>
 
     </section>
@@ -132,17 +120,13 @@ async function loadBrands() {
 
     try {
         const response = await fetch(API_URL);
-        const data = await response.json();
-
-        // ⚠️ API retourne [[...]]
-        const brands = data[0];
+        const brands = await response.json();
 
         container.innerHTML = "";
 
         brands.forEach(brand => {
 
-            // créer liste modèles
-            const modelsHTML = brand.models
+            const modelsList = brand.models
                 .map(model => `<li>${model}</li>`)
                 .join("");
 
@@ -152,9 +136,7 @@ async function loadBrands() {
             card.innerHTML = `
                 <h3>${brand.brand}</h3>
                 <div class="models">
-                    <ul>
-                        ${modelsHTML}
-                    </ul>
+                    <ul>${modelsList}</ul>
                 </div>
             `;
 
@@ -164,11 +146,10 @@ async function loadBrands() {
     } catch (error) {
         console.error(error);
         container.innerHTML =
-            "<p>❌ Erreur lors du chargement de l'API</p>";
+            "<p>❌ Impossible de charger les voitures depuis l'API.</p>";
     }
 }
 
-// appel automatique
 loadBrands();
 
 </script>
