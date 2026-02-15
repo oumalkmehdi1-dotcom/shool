@@ -1,171 +1,171 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>École Excellence - Primaire & Secondaire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecole Horizon - Primaire & Secondaire</title>
 
-        header {
-            background: linear-gradient(90deg, #2c3e50, #3498db);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+<style>
 
-        nav {
-            background-color: #1f2a36;
-            text-align: center;
-            padding: 10px;
-        }
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f5f7fa;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+/* ===== HEADER ===== */
+header{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
 
-        nav a:hover {
-            color: #3498db;
-        }
+nav{
+    background:#084298;
+    text-align:center;
+    padding:12px;
+}
 
-        .hero {
-            background: url('https://images.unsplash.com/photo-1588072432836-e10032774350') no-repeat center center/cover;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        .hero h1 {
-            background-color: rgba(0,0,0,0.6);
-            padding: 20px;
-            border-radius: 10px;
-        }
+nav a:hover{
+    text-decoration:underline;
+}
 
-        section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+/* ===== HERO ===== */
+.hero{
+    background:url("https://images.unsplash.com/photo-1509062522246-3755977927d7") center/cover;
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.hero h1{
+    font-size:40px;
+}
 
-        .card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+/* ===== SECTIONS ===== */
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
 
-        footer {
-            background-color: #1f2a36;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    flex:1;
+    min-width:250px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
+/* ===== CONTACT ===== */
+.contact{
+    background:#e9ecef;
+    border-radius:10px;
+}
 
-        .btn:hover {
-            background-color: #2980b9;
-        }
-    </style>
+/* ===== FOOTER ===== */
+footer{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .hero h1{
+        font-size:28px;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>École Excellence</h1>
+    <h1>Ecole Horizon</h1>
     <p>Enseignement Primaire & Secondaire</p>
 </header>
 
 <nav>
-    <a href="#apropos">À propos</a>
-    <a href="#programmes">Programmes</a>
-    <a href="#admissions">Admissions</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Accueil</a>
+    <a href="#">Notre école</a>
+    <a href="#">Programmes</a>
+    <a href="#">Activités</a>
+    <a href="#">Contact</a>
 </nav>
 
 <div class="hero">
-    <h1>Former les leaders de demain</h1>
+    <h1>Former aujourd'hui les citoyens de demain</h1>
+    <p>Education • Discipline • Excellence</p>
 </div>
 
-<section id="apropos">
-    <h2>À propos de notre école</h2>
+<section>
+    <h2>Présentation</h2>
     <p>
-        L’École Excellence offre un enseignement de qualité pour les cycles primaire et secondaire.
-        Notre mission est de développer le potentiel académique, social et personnel de chaque élève.
+        L'École Horizon accueille les élèves du primaire et du secondaire
+        dans un environnement moderne favorisant la réussite scolaire,
+        le développement personnel et les compétences numériques.
     </p>
 </section>
 
-<section id="programmes">
-    <h2>Nos Programmes</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1584697964154-42c6a6dfaa04" alt="Primaire">
-            <h3>Cycle Primaire</h3>
-            <p>Un apprentissage fondamental solide avec des activités ludiques et pédagogiques.</p>
-        </div>
+<section>
+<h2>Nos Programmes</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="Secondaire">
-            <h3>Cycle Secondaire</h3>
-            <p>Préparation académique avancée et orientation vers l’enseignement supérieur.</p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Activités">
-            <h3>Activités Parascolaires</h3>
-            <p>Sports, arts, clubs scientifiques et culturels pour un développement complet.</p>
-        </div>
-    </div>
+<div class="card">
+<h3>Cycle Primaire</h3>
+<p>
+Apprentissage des bases fondamentales : lecture,
+écriture, mathématiques, sciences et activités artistiques.
+</p>
+</div>
+
+<div class="card">
+<h3>Cycle Secondaire</h3>
+<p>
+Programme académique renforcé en sciences,
+langues étrangères et technologies numériques.
+</p>
+</div>
+
+<div class="card">
+<h3>Activités Parascolaires</h3>
+<p>
+Sport, informatique, robotique, musique et clubs éducatifs
+pour développer les talents des élèves.
+</p>
+</div>
+
+</div>
 </section>
 
-<section id="admissions">
-    <h2>Admissions</h2>
-    <p>
-        Les inscriptions sont ouvertes toute l’année. Contactez-nous pour plus d’informations
-        sur les conditions d’admission et les frais de scolarité.
-    </p>
-    <a href="#contact" class="btn">S'inscrire maintenant</a>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email : contact@ecoleexcellence.com</p>
-    <p>Téléphone : +123 456 789</p>
-    <p>Adresse : 123 Rue de l'Éducation, Ville</p>
+<section class="contact">
+<h2>Contact</h2>
+<p><strong>Adresse :</strong> Casablanca, Maroc</p>
+<p><strong>Email :</strong> contact@ecolehorizon.ma</p>
+<p><strong>Téléphone :</strong> +212 6 00 00 00 00</p>
 </section>
 
 <footer>
-    <p>&copy; 2026 École Excellence - Tous droits réservés</p>
+<p>© 2026 Ecole Horizon — Tous droits réservés</p>
 </footer>
 
 </body>
