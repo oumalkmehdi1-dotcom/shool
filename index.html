@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>École Excellence - Primaire & Secondaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1f2a36;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1588072432836-e10032774350') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            background-color: rgba(0,0,0,0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #1f2a36;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>École Excellence</h1>
+    <p>Enseignement Primaire & Secondaire</p>
+</header>
+
+<nav>
+    <a href="#apropos">À propos</a>
+    <a href="#programmes">Programmes</a>
+    <a href="#admissions">Admissions</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+    <h1>Former les leaders de demain</h1>
+</div>
+
+<section id="apropos">
+    <h2>À propos de notre école</h2>
+    <p>
+        L’École Excellence offre un enseignement de qualité pour les cycles primaire et secondaire.
+        Notre mission est de développer le potentiel académique, social et personnel de chaque élève.
+    </p>
+</section>
+
+<section id="programmes">
+    <h2>Nos Programmes</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1584697964154-42c6a6dfaa04" alt="Primaire">
+            <h3>Cycle Primaire</h3>
+            <p>Un apprentissage fondamental solide avec des activités ludiques et pédagogiques.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="Secondaire">
+            <h3>Cycle Secondaire</h3>
+            <p>Préparation académique avancée et orientation vers l’enseignement supérieur.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Activités">
+            <h3>Activités Parascolaires</h3>
+            <p>Sports, arts, clubs scientifiques et culturels pour un développement complet.</p>
+        </div>
+    </div>
+</section>
+
+<section id="admissions">
+    <h2>Admissions</h2>
+    <p>
+        Les inscriptions sont ouvertes toute l’année. Contactez-nous pour plus d’informations
+        sur les conditions d’admission et les frais de scolarité.
+    </p>
+    <a href="#contact" class="btn">S'inscrire maintenant</a>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email : contact@ecoleexcellence.com</p>
+    <p>Téléphone : +123 456 789</p>
+    <p>Adresse : 123 Rue de l'Éducation, Ville</p>
+</section>
+
+<footer>
+    <p>&copy; 2026 École Excellence - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
