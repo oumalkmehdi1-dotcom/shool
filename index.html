@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location de Voitures Maroc</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -72,11 +73,6 @@
             margin-top: 10px;
         }
 
-        .models ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
         footer {
             text-align: center;
             background-color: #cc5200;
@@ -84,153 +80,88 @@
             padding: 15px 0;
             margin-top: 40px;
         }
+
+        .loading {
+            text-align: center;
+            font-size: 18px;
+        }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Location de Voitures au Maroc</h1>
-        <p>Trouvez la voiture de vos rêves parmi toutes les marques populaires</p>
-    </header>
+<header>
+    <h1>Location de Voitures au Maroc</h1>
+    <p>Trouvez la voiture idéale depuis notre API Cloud 🚗</p>
+</header>
 
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#brands">Marques</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav>
+    <a href="#">Accueil</a>
+    <a href="#brands">Voitures</a>
+    <a href="#">Contact</a>
+</nav>
 
-    <div class="container">
-        <section id="brands">
-            <h2>Nos Marques Disponibles</h2>
-            <div class="brands">
+<div class="container">
+    <section id="brands">
+        <h2>Voitures Disponibles</h2>
 
-                <div class="brand">
-                    <h3>Toyota</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Corolla</li>
-                            <li>Yaris</li>
-                            <li>Land Cruiser</li>
-                            <li>Rav4</li>
-                        </ul>
-                    </div>
+        <!-- contenu dynamique -->
+        <div id="carsContainer" class="brands">
+            <p class="loading">Chargement des voitures...</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Location de Voitures Maroc</p>
+</footer>
+
+<script>
+const API_URL = "https://school-back-a4axavahdwfhezca.westeurope-01.azurewebsites.net/api/cars";
+
+async function loadCars() {
+    const container = document.getElementById("carsContainer");
+
+    try {
+        const response = await fetch(API_URL);
+        const cars = await response.json();
+
+        container.innerHTML = "";
+
+        // Si API vide
+        if (!cars || cars.length === 0) {
+            container.innerHTML = "<p>Aucune voiture disponible.</p>";
+            return;
+        }
+
+        // Création dynamique des cards
+        cars.forEach(car => {
+
+            const card = document.createElement("div");
+            card.className = "brand";
+
+            card.innerHTML = `
+                <h3>${car.brand ?? "Marque inconnue"}</h3>
+                <div class="models">
+                    <p><strong>Modèle :</strong> ${car.model ?? "-"}</p>
+                    <p><strong>Prix :</strong> ${car.price ?? "-"} MAD / jour</p>
+                    <p><strong>Catégorie :</strong> ${car.category ?? "-"}</p>
                 </div>
+            `;
 
-                <div class="brand">
-                    <h3>Renault</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Clio</li>
-                            <li>Megane</li>
-                            <li>Captur</li>
-                            <li>Duster</li>
-                        </ul>
-                    </div>
-                </div>
+            container.appendChild(card);
+        });
 
-                <div class="brand">
-                    <h3>Peugeot</h3>
-                    <div class="models">
-                        <ul>
-                            <li>208</li>
-                            <li>308</li>
-                            <li>3008</li>
-                            <li>5008</li>
-                        </ul>
-                    </div>
-                </div>
+    } catch (error) {
+        console.error(error);
+        container.innerHTML =
+            "<p>❌ Impossible de charger les données depuis l'API.</p>";
+    }
+}
 
-                <div class="brand">
-                    <h3>Ford</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Fiesta</li>
-                            <li>Focus</li>
-                            <li>Mustang</li>
-                            <li>Explorer</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <h3>Hyundai</h3>
-                    <div class="models">
-                        <ul>
-                            <li>i10</li>
-                            <li>i20</li>
-                            <li>Tucson</li>
-                            <li>Santa Fe</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <h3>Mercedes-Benz</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Classe A</li>
-                            <li>Classe C</li>
-                            <li>GLC</li>
-                            <li>GLE</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <h3>BMW</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Série 1</li>
-                            <li>Série 3</li>
-                            <li>X3</li>
-                            <li>X5</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <h3>Nissan</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Micra</li>
-                            <li>Qashqai</li>
-                            <li>X-Trail</li>
-                            <li>Patrol</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <h3>Kia</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Picanto</li>
-                            <li>Rio</li>
-                            <li>Sportage</li>
-                            <li>Sorento</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <h3>Volkswagen</h3>
-                    <div class="models">
-                        <ul>
-                            <li>Polo</li>
-                            <li>Golf</li>
-                            <li>Tiguan</li>
-                            <li>Passat</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Location de Voitures Maroc. Tous droits réservés.</p>
-    </footer>
+// appel automatique
+loadCars();
+</script>
 
 </body>
 </html>
