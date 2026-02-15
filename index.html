@@ -63,12 +63,10 @@
             color: #0066cc;
         }
 
-        footer {
-            text-align: center;
-            background-color: #004d99;
-            color: white;
-            padding: 15px 0;
-            margin-top: 40px;
+        .niveau {
+            font-style: italic;
+            color: #555;
+            margin-top: 5px;
         }
 
         .cours {
@@ -76,6 +74,14 @@
             padding: 10px;
             border-radius: 5px;
             margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #004d99;
+            color: white;
+            padding: 15px 0;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -94,10 +100,13 @@
 
     <div class="container">
         <section id="specialites">
-            <h2>Nos Spécialités</h2>
+            <h2>Nos Spécialités & Niveaux</h2>
             <div class="specialites">
                 <div class="specialite">
                     <h3>Mathématiques</h3>
+                    <div class="niveau">
+                        Niveaux : 1ère Bac Tronc Commun, 2ème Bac Sciences Math A, Sciences Math B, Sciences Expérimentales, Sciences Techniques
+                    </div>
                     <p>Approfondissement en algèbre, géométrie et analyse.</p>
                     <div class="cours">
                         <strong>Cours exemple :</strong> Résolution d'équations quadratiques et systèmes linéaires.
@@ -105,6 +114,9 @@
                 </div>
                 <div class="specialite">
                     <h3>Sciences Physiques</h3>
+                    <div class="niveau">
+                        Niveaux : 1ère Bac Tronc Commun, 2ème Bac Sciences Expérimentales, Sciences Techniques
+                    </div>
                     <p>Physique classique, chimie et expérimentations pratiques.</p>
                     <div class="cours">
                         <strong>Cours exemple :</strong> Lois de Newton et électromagnétisme.
@@ -112,13 +124,29 @@
                 </div>
                 <div class="specialite">
                     <h3>Informatique</h3>
+                    <div class="niveau">
+                        Niveaux : 1ère Bac Tronc Commun, 2ème Bac Sciences Math A, Sciences Math B, Sciences Techniques
+                    </div>
                     <p>Programmation, bases de données et algorithmique.</p>
                     <div class="cours">
                         <strong>Cours exemple :</strong> Introduction au Python et structures de données.
                     </div>
                 </div>
                 <div class="specialite">
-                    <h3>Littérature & Langues</h3>
+                    <h3>Économie & Gestion</h3>
+                    <div class="niveau">
+                        Niveaux : 1ère Bac Tronc Commun, 2ème Bac Sciences Économiques
+                    </div>
+                    <p>Principes d’économie, comptabilité et gestion.</p>
+                    <div class="cours">
+                        <strong>Cours exemple :</strong> Analyse financière et gestion budgétaire.
+                    </div>
+                </div>
+                <div class="specialite">
+                    <h3>Lettres & Sciences Humaines</h3>
+                    <div class="niveau">
+                        Niveaux : 1ère Bac Tronc Commun, 2ème Bac Lettres & Sciences Humaines
+                    </div>
                     <p>Arabe, Français et Anglais pour développer vos compétences linguistiques.</p>
                     <div class="cours">
                         <strong>Cours exemple :</strong> Analyse de texte et rédaction d'essais.
