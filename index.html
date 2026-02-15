@@ -1,172 +1,136 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ecole Horizon - Primaire & Secondaire</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>École Marocain – Collège & Lycée</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
 
-<style>
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#f5f7fa;
-}
+        nav {
+            background-color: #004d99;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
 
-/* ===== HEADER ===== */
-header{
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
 
-nav{
-    background:#084298;
-    text-align:center;
-    padding:12px;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-nav a{
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:bold;
-}
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
 
-nav a:hover{
-    text-decoration:underline;
-}
+        .specialites {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-/* ===== HERO ===== */
-.hero{
-    background:url("https://images.unsplash.com/photo-1509062522246-3755977927d7") center/cover;
-    color:white;
-    text-align:center;
-    padding:90px 20px;
-}
+        .specialite {
+            flex: 1 1 250px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-.hero h1{
-    font-size:40px;
-}
+        .specialite h3 {
+            margin-top: 0;
+            color: #0066cc;
+        }
 
-/* ===== SECTIONS ===== */
-section{
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
-}
+        footer {
+            text-align: center;
+            background-color: #004d99;
+            color: white;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
 
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1);
-    flex:1;
-    min-width:250px;
-}
-
-/* ===== CONTACT ===== */
-.contact{
-    background:#e9ecef;
-    border-radius:10px;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-    .hero h1{
-        font-size:28px;
-    }
-}
-
-</style>
+        .cours {
+            background-color: #e6f0ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Ecole Horizon</h1>
-    <p>Enseignement Primaire & Secondaire</p>
-</header>
+    <header>
+        <h1>École Marocain – Collège & Lycée</h1>
+        <p>Offrant des formations de qualité avec des spécialités variées</p>
+    </header>
 
-<nav>
-    <a href="#">Accueil</a>
-    <a href="#">Notre école</a>
-    <a href="#">Programmes</a>
-    <a href="#">Activités</a>
-    <a href="#">Contact</a>
-</nav>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#specialites">Spécialités</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<div class="hero">
-    <h1>Former aujourd'hui les citoyens de demain</h1>
-    <p>Education • Discipline • Excellence</p>
-</div>
+    <div class="container">
+        <section id="specialites">
+            <h2>Nos Spécialités</h2>
+            <div class="specialites">
+                <div class="specialite">
+                    <h3>Mathématiques</h3>
+                    <p>Approfondissement en algèbre, géométrie et analyse.</p>
+                    <div class="cours">
+                        <strong>Cours exemple :</strong> Résolution d'équations quadratiques et systèmes linéaires.
+                    </div>
+                </div>
+                <div class="specialite">
+                    <h3>Sciences Physiques</h3>
+                    <p>Physique classique, chimie et expérimentations pratiques.</p>
+                    <div class="cours">
+                        <strong>Cours exemple :</strong> Lois de Newton et électromagnétisme.
+                    </div>
+                </div>
+                <div class="specialite">
+                    <h3>Informatique</h3>
+                    <p>Programmation, bases de données et algorithmique.</p>
+                    <div class="cours">
+                        <strong>Cours exemple :</strong> Introduction au Python et structures de données.
+                    </div>
+                </div>
+                <div class="specialite">
+                    <h3>Littérature & Langues</h3>
+                    <p>Arabe, Français et Anglais pour développer vos compétences linguistiques.</p>
+                    <div class="cours">
+                        <strong>Cours exemple :</strong> Analyse de texte et rédaction d'essais.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-<section>
-    <h2>Présentation</h2>
-    <p>
-        L'École Horizon accueille les élèves du primaire et du secondaire
-        dans un environnement moderne favorisant la réussite scolaire,
-        le développement personnel et les compétences numériques.
-    </p>
-</section>
-
-<section>
-<h2>Nos Programmes</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Cycle Primaire</h3>
-<p>
-Apprentissage des bases fondamentales : lecture,
-écriture, mathématiques, sciences et activités artistiques.
-</p>
-</div>
-
-<div class="card">
-<h3>Cycle Secondaire</h3>
-<p>
-Programme académique renforcé en sciences,
-langues étrangères et technologies numériques.
-</p>
-</div>
-
-<div class="card">
-<h3>Activités Parascolaires</h3>
-<p>
-Sport, informatique, robotique, musique et clubs éducatifs
-pour développer les talents des élèves.
-</p>
-</div>
-
-</div>
-</section>
-
-<section class="contact">
-<h2>Contact</h2>
-<p><strong>Adresse :</strong> Casablanca, Maroc</p>
-<p><strong>Email :</strong> contact@ecolehorizon.ma</p>
-<p><strong>Téléphone :</strong> +212 6 00 00 00 00</p>
-</section>
-
-<footer>
-<p>© 2026 Ecole Horizon — Tous droits réservés</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 École Marocain. Tous droits réservés.</p>
+    </footer>
 
 </body>
 </html>
